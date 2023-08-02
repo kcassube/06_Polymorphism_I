@@ -12,6 +12,13 @@ public class App {
         pollObj(worker);
         pollObj(drone);
 
+        output("---------------------");
+
+        // -- Das sollte eigentlich nicht gehen! --//
+        HoneyBee bee = new HoneyBee();
+        pollObj(bee);
+
+
     }
 
     //--- 3. Iteration :: Polymorphie ----- //
