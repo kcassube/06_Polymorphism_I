@@ -8,26 +8,34 @@ public class App {
         Worker worker = new Worker();
         Drone drone = new Drone();
 
-        output(queen.doYourJob());
-        output(worker.doYourJob());
-        output(drone.doYourJob());
+        pollObj(queen);
+        pollObj(worker);
+        pollObj(drone);
 
-        output("---------------------");
-
-        output(queen.fly());
-        output(worker.fly());
-        output(drone.fly());
-
-
-
-
-
-
-        
     }
 
-   
-   
+    //--- 2. Iteration :: Overloading ----- //
+    
+    private static void pollObj(Queen obj) {
+        output(obj.doYourJob());
+        output(obj.fly());
+        output("---------------------");
+    }
+
+    private static void pollObj(Worker obj) {
+        output(obj.doYourJob());
+        output(obj.fly());
+        output("---------------------");
+    }
+
+    private static void pollObj(Drone obj) {
+        output(obj.doYourJob());
+        output(obj.fly());
+        output("---------------------");
+    }
+
+
+
     private static void output(String outputStr) {
         System.out.println(outputStr);
     }
