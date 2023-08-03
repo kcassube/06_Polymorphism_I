@@ -8,26 +8,28 @@ public class App {
         Worker worker = new Worker();
         Drone drone = new Drone();
 
-        output(queen.doYourJob());
-        output(worker.doYourJob());
-        output(drone.doYourJob());
+        pollObj(queen);
+        pollObj(worker);
+        pollObj(drone);
 
         output("---------------------");
 
-        output(queen.fly());
-        output(worker.fly());
-        output(drone.fly());
+        // -- Das sollte eigentlich nicht gehen! --//
+        HoneyBee bee = new HoneyBee();
+        pollObj(bee);
 
 
-
-
-
-
-        
     }
 
-   
-   
+    //--- 3. Iteration :: Polymorphie ----- //
+
+    private static void pollObj(HoneyBee obj) {
+        output(obj.doYourJob());
+        output(obj.fly());
+        output("---------------------");
+    }
+
+
     private static void output(String outputStr) {
         System.out.println(outputStr);
     }
